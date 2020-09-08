@@ -1,19 +1,19 @@
 
 #asking for user input
-user_sentance = (input("please enter a sentance to be turned into camelCase: "))
+def camelcase(sentence):
+    
+    title_case = sentence.title()
+    upper_camel_cased = title_case.replace(" ", "")
 
+    return upper_camel_cased[0:1].lower() +upper_camel_cased[1:]
 
-#taking out the spaces
-sentance = user_sentance.split(" ")
+def main():
+    sentence = input("Enter Your Sentence: ")
+    output = camelcase(sentence)
+    print(output)
 
-
-
-#asking if any character int he users sentace is a digit and printing a message if it is
-if any(chr.isdigit() for chr in user_sentance):
-    print ("please do not include numbers")
-else:
-    #skipping the first letter, capitalize the letter in camelCase
-    print (sentance[0] + "".join(map(str.capitalize, sentance[1:])))
+if __name__ == "__main__":
+    main() 
 
 
 
